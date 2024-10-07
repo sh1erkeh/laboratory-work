@@ -1,0 +1,50 @@
+% Page layout
+\usepackage[left=15mm, top=10mm, right=15mm, bottom=15mm]{geometry}
+
+% Nice dot
+\usepackage{graphicx}
+\newcommand\dt[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+% Enumerate
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+% Pictures
+\usepackage{asymptote}
+
+% Language
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}
+
+% Doc
+\usepackage{subfiles}
+
+% Code
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{textcomp}
+
+\definecolor{string}{RGB}{0,128,0} % dark green
+\definecolor{comment}{RGB}{255,0,0}  % red
+\definecolor{keyword}{RGB}{0,0,255} % blue
+
+\lstdefinestyle{c}{
+	commentstyle=\color{comment},
+	stringstyle=\color{string},
+	keywordstyle=\color{keyword},
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	frame=lines,
+	breaklines=true,
+	showstringspaces=false,
+	upquote=true,
+	tabsize=4,
+}

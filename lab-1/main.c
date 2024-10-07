@@ -2,15 +2,18 @@
 #include <math.h>
 #include <stdlib.h>
 
+const MAX_N = 100;
+
 size_t n;
 float x, h, a, *r = NULL;
 
 int task1() {
     printf("Input format: 'n x h a'.\n");
-    printf("Variables must be of the following types: n(positive integer), x(float), h(float), a(float).\n");
+    printf("Variables must be of the following types: \
+    n(positive integer), x(float), h(float), a(float).\n");
 
     int counter = 0;
-    while (scanf("%zu%f%f%f", &n, &x, &h, &a) != 4 || n == 0) {
+    while (scanf("%zu%f%f%f", &n, &x, &h, &a) != 4 || n == 0 || n > MAX_N) {
         if (++counter > 5) {
             printf("Too many attempts.\n");
             return 1;
@@ -25,7 +28,7 @@ int task1() {
     }
 
     for (int i = 1; i <= n; i++) {
-        r[i - 1] = 0.3 * cos(2 * a * x - i * i * h);;
+        r[i - 1] = 0.3 * cos(2 * a * x - i * i * h);
     }
     return 0;
 }
@@ -38,13 +41,12 @@ int task2() {
 
     int last_free_pos = 0;
     for (int i = 0; i < n; i++) {
-        if (abs(r[i]) >= 0.7) {
+        if (abs(r[i]) > 0.7) {
             r[last_free_pos++] = r[i];
         }
     }
-
     n = last_free_pos;
-    r = realloc(r, n * sizeof(float));
+    r = (float*)realloc(r, n * sizeof(float));
     return 0;
 }
 
@@ -69,7 +71,7 @@ int task3() {
             sum += r[i];
         }
     }
-    printf("%f", sum / n);
+    printf("%f", sum / (n - first_maximum_index - 1));
     return 0;
 }
 
@@ -86,6 +88,8 @@ int main() {
         printf("Task 3 failed.\n");
         return 1;
     }
-    free(r);
+    if (r != NULL) {
+        free(r);
+    }
     return 0;
 }

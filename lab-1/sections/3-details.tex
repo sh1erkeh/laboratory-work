@@ -1,0 +1,21 @@
+\textbf{Дано:}
+\begin{enumerate}
+    \item \(n \in \mathbb{Z}_{+};\ x,\ h,\ a \in \mathbb{R}\).
+    \item Нет входных данных.
+    \item Нет входных данных.
+\end{enumerate}
+\noindent
+\textbf{Результат:}
+\begin{enumerate}
+   \item \(R[1{:}n]\) (массив вещественных чисел) или сообщение <<Memory allocation error>>.
+   \item \(R[1{:}k]\) (массив вещественных чисел) или сообщение <<Array is empty or not initialized>>.
+   \item \(M\) (вещественное число), или сообщение <<Array is empty or not initialized>>, или сообщение <<There are no elements after first maximum>>.
+\end{enumerate} 
+\noindent
+\textbf{При:} \(n \in \mathbb{N},\ n \leq\) MAXN.\\ \\  
+\textbf{Связь:} 
+\begin{enumerate}
+    \item См. формулу в условии.
+    \item Для \(i = \overline{1 \dots n}: R[i] > 0.7\) требуется найти \(j = \min\{v\ |\ v \in [1 \dots i] \land (R[v] \leq 0.7 \lor v = i)\}\) и присвоить \(R[j] \coloneqq R[i]\).
+    \item Положим \(ind = \min\{i\ |\ \forall j \in [1 \dots k]\ R[j] \leq R[i]\}\). Требуется найти \(\displaystyle M = \frac{1}{k - ind - 1} \sum\limits_{i = ind+1}^{k}R[i]\).  
+\end{enumerate}

@@ -1,0 +1,22 @@
+\begin{enumerate}
+    \item \(
+    \begin{cases}
+        \text{Для}\ i = \overline{1 \dots n}\\
+        R[i] = 0.3\cos(2ax - i^2h)\\
+    \end{cases}\)
+    \item 
+    \(pos = 0\)\\[0.2cm]
+    \(\begin{cases}
+        \text{Для}\ i = \overline{1 \dots n}\\
+        (R[pos] = r[i],\ pos = pos + 1),\ \text{если}\ \vert R[i] \vert > 0.7\\
+    \end{cases}\)
+    \item 
+    $fst = 0$\\
+    $sum = 0$\\[0.2cm]
+    $\begin{cases}
+        \text{Для}\ i = \overline{1 \dots k}\\
+        (fst = i,\ sum = 0),\ \text{если}\ R[i] > R[fst]\\
+        (sum = sum + R[i])\ \text{в противном случае}\\    
+    \end{cases}$\\
+    \(\displaystyle M = \frac{sum}{k - fst - 1}\) 
+\end{enumerate}
