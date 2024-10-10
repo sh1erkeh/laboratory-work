@@ -1,0 +1,71 @@
+\underline{Алг} <<Лабораторная работа 1>>\\
+maxn := 100\\
+
+\noindent \underline{Объявить переменные:}\\
+\null\qquad n как размер\\
+\null\qquad x, h, a как вещественные числа\\
+\null\qquad r как массив длиной maxn\\[0.3cm]
+
+\noindent\underline{нач}:\\
+\null\qquad вывод("Лабораторная работа 1")\\
+\null\qquad вывод("Задача 1")\\
+\null\qquad вывод("Формат ввода: 'n x h a'")\\
+\null\qquad вывод("Переменные должны быть следующих типов:")\\
+\null\qquad вывод("n (положительное целое число), x (вещественное), h (вещественное), a (вещественное)")\\[0.3cm]
+
+\noindent\null\qquad\underline{цикл}\\
+\null\qquad\null\qquad вывод("Формат ввода некорректен. Попробуйте снова.")\\
+\null\qquad\underline{до} ввод(n, x, h, a) = 4 и \(0 < n \leq maxn\) \\
+\null\qquad\underline{кц}\\[0.3cm]
+
+\noindent\null\qquad\underline{цикл} \underline{от} i := 1 до n:\\
+\null\qquad\null\qquad \(r[i - 1] = 0.3 cos(2 a x - i^2 h)\)\\
+\null\qquad\underline{кц}\\[0.3cm]
+
+\noindent\null\qquad вывод("Элементы массива:")\\
+\noindent\null\qquad\underline{цикл} \underline{от} i := 0 до n - 1:\\
+\null\qquad\null\qquad вывод('r[i] =', r[i])\\
+\null\qquad\null\qquad \underline{всё}\\
+\null\qquad\underline{кц}\\[0.3cm]
+
+\noindent\null\qquad вывод("Задача 2")\\
+\null\qquad pos := 0\\
+\null\qquad\underline{цикл} \underline{от} i := 0 до n - 1:\\
+\null\qquad\null\qquad \underline{если} \(\vert r[i] \vert > 0.7\) \underline{то}:\\
+\null\qquad\null\qquad\qquad r[pos] = r[i]\\
+\null\qquad\null\qquad\qquad pos = pos + 1\\
+\null\qquad\underline{всё}\\
+\null\qquad\underline{кц}\\[0.3cm]
+
+\noindent\null\qquad\underline{если} \(pos == 0\) \underline{то}:\\
+\null\qquad\null\qquad вывод("Все элементы были удалены.")\\
+\null\qquad\null\qquad Завершить программу с кодом 1\\
+\null\qquad\underline{иначе} \underline{если} \(pos == n\):\\
+\null\qquad\null\qquad вывод("Ни один элемент не был удален.")\\
+\null\qquad\underline{всё}\\[0.3cm]
+
+\noindent\null\qquad вывод("Новый массив длиной pos:")\\
+\null\qquad\underline{цикл} \underline{от} i := 0 до pos - 1:\\
+\null\qquad\null\qquad вывод('r[i] =', r[i])\\
+\noindent\null\qquad n = pos\\[0.3cm]
+
+\noindent\null\qquad вывод("Задача 3")\\
+\null\qquad fst := 0\\
+\null\qquad sum := 0\\[0.3cm]
+
+\noindent\null\qquad\underline{цикл} \underline{от} i := 0 до n - 1:\\
+\null\qquad\null\qquad \underline{если} \(r[i] > r[fst]\):\\
+\null\qquad\null\qquad\qquad fst = i\\
+\null\qquad\null\qquad\qquad sum = 0\\
+\null\qquad\null\qquad \underline{иначе}:\\
+\null\qquad\null\qquad\qquad sum = sum + r[i]\\
+\null\qquad\null\qquad \underline{всё}\\
+\null\qquad\underline{кц}\\[0.3cm]
+
+\noindent\null\qquad\underline{если} \(fst == n - 1\):\\
+\null\qquad\null\qquad вывод("Нет элементов после первого максимума.")\\
+\null\qquad\null\qquad Завершить программу с кодом 1\\
+\null\qquad\underline{всё}\\[0.3cm]
+
+\noindent\null\qquad вывод('Значение среднего арифметического:' , sum / (n - fst - 1))\\
+\underline{конец}
