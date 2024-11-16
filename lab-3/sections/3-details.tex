@@ -28,6 +28,6 @@
     \item 
     \begin{enumerate}
         \item \(\forall i = \overline{1\dots n}\ cnt[i] = \left\vert \{j \in {[1, n]}\ |\ A[j] = A[i] \} \right\vert \).
-        \item Для \(i = \overline{1 \dots n}: cnt[i] = 1\) требуется найти \(j = \min\{v \in [1, i]\ |\ cnt[v] = 1 \lor v = i\}\) и присвоить \(A[j] \coloneqq A[i]\).
+        \item Для \(i = \overline{1 \dots n}: cnt[i] \neq 1\) требуется найти \(j = \min\{v \in [1, i]\ |\ cnt[v] = 1 \lor v = i\}\) и присвоить \(A[j] \coloneqq A[i]\).
     \end{enumerate}
 \end{enumerate}
