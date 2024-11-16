@@ -1,0 +1,47 @@
+\documentclass[12pt]{extarticle}
+
+\usepackage{../preamble}
+
+\begin{document}
+
+\subfile{sections/1-titlepage}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\section*{\centering Задание}
+\addcontentsline{toc}{section}{Задание}
+\subfile{sections/2-task}
+\pagebreak
+
+\section*{\centering Постановка задачи}
+\addcontentsline{toc}{section}{Постановка задачи}
+\subfile{sections/3-details}
+\pagebreak
+
+\section*{\centering Метод решения}
+\addcontentsline{toc}{section}{Метод решения}
+\subfile{sections/4-method}
+\pagebreak
+
+\section*{\centering Внешняя спецификация}
+\addcontentsline{toc}{section}{Внешняя спецификация}
+\subfile{sections/5-specification}
+\pagebreak
+
+\section*{\centering Описание аглогритма на псевдокоде}
+\addcontentsline{toc}{section}{Описание аглогритма на псевдокоде}
+\subfile{sections/6-pseudo-code}
+\pagebreak
+
+\section*{\centering Листинг программы}
+\addcontentsline{toc}{section}{Листинг программы}
+\subfile{sections/7-code}
+\pagebreak
+
+\section*{\centering Распечатка тестов к программе и результатов}
+\addcontentsline{toc}{section}{Распечатка тестов к программе и результатов}
+\subfile{sections/8-tests}
+\pagebreak
+\end{document}

@@ -1,0 +1,33 @@
+\textbf{Дано:}
+\begin{enumerate}
+    \item \(n, m \in \mathbb{N}\).
+    \item \(n, m \in \mathbb{N}\). \(C_{i,j} \in \mathbb{Z}\).
+    \item \(n \in \mathbb{N}\). \(A_i \in \mathbb{Z}\).    
+\end{enumerate}
+
+\noindent
+\textbf{Результат:}
+\begin{enumerate}
+   \item \(a \in \mathbb{N}\). 
+   \item \(V \in \mathbb{R}\).
+   \item \(A[1{:}k]\) --- целочисленный массив.    
+\end{enumerate} 
+
+\noindent
+\textbf{При:} 
+\begin{enumerate}\addtocounter{enumi}{1}
+    \item \(0 < n, m \leq  MaxSize\).
+    \item \(0 < n \leq MaxSize\). 
+\end{enumerate}
+
+\noindent
+\textbf{Связь:} 
+\begin{enumerate}
+    \item См. формулу в условии.
+    \item См. формулу в условии.
+    \item 
+    \begin{enumerate}
+        \item \(\forall i = \overline{1\dots n}\ cnt[i] = \left\vert \{j \in {[1, n]}\ |\ A[j] = A[i] \} \right\vert \).
+        \item Для \(i = \overline{1 \dots n}: cnt[i] = 1\) требуется найти \(j = \min\{v \in [1, i]\ |\ cnt[v] = 1 \lor v = i\}\) и присвоить \(A[j] \coloneqq A[i]\).
+    \end{enumerate}
+\end{enumerate}

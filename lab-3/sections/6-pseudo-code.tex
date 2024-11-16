@@ -1,0 +1,160 @@
+\subsection*{Задание 1}
+
+\noindent \underline{функция} factorial(x)\\
+\null\null\qquad result := 1\\
+\null\null\qquad \underline{цикл} i := 2 \underline{до} x:\\
+\null\null\qquad \null\qquad result = result \(\cdot\) i\\
+\null\null\qquad \underline{кц}\\
+\underline{кц}\\
+
+\noindent \underline{Нач}\\
+\null\qquad вывод("Задача 1")\\
+\null\qquad вывод("Введите два положительных целых числа: n m")\\
+
+\noindent
+\null\qquad n, m: целое поожительное число\\
+\null\qquad \underline{цикл-пока} (ввод(n) не целое положительное) или (ввод(m) не целое положительное) или (m == 0) или (n == 0) или (n > m):\\
+\null\qquad \qquad вывод("Неверный формат ввода. Попробуйте снова.")\\
+\null\qquad \underline{кц}\\
+
+\noindent
+\null\qquad numerator := 1\\
+\null\qquad \underline{цикл} i := m - n + 1 \underline{до} m:\\
+\null\qquad \null\qquad numerator = numerator \(\cdot\) i\\
+\null\qquad \underline{кц}\\
+\null\qquad вывод\(\left(\text{Результат:}\ \displaystyle \frac{numerator}{factorial(n)}\right)\)\\
+\underline{Конец}
+
+\subsection*{Задание 2}
+
+Константа MaxSize = 100\\
+
+\noindent \underline{функция} validSize(size: целое число):\\
+\null\qquad \underline{вернуть} size > 0 и size <= MaxSize\\
+\underline{кц}\\
+
+\noindent \underline{процедура} inputArray(size: целое число, array: массив целых чисел):\\
+\null\qquad correctInput: булево\\
+\null\qquad \underline{цикл}:\\
+\null\qquad \qquad correctInput = true\\
+\null\qquad \qquad \underline{цикл} i := 0 \underline{до} size - 1:\\
+\null\qquad \qquad \qquad ввод(array[i])\\
+\null\qquad \qquad \qquad \underline{если} array[i] не является целым числом \underline{то}\\
+\null\qquad \qquad \qquad \qquad correctInput = false\\
+\null\qquad \qquad \qquad \underline{всё}\\
+\null\qquad \qquad \underline{кц}\\
+\null\qquad \qquad \underline{если} !correctInput \underline{то}\\
+\null\qquad \qquad \qquad вывод("Неверный формат ввода. Попробуйте снова.")\\
+\null\qquad \qquad \underline{всё}\\
+\null\qquad \underline{до} correctInput\\
+\null\qquad \underline{кц}\\
+\underline{кц}\\
+
+\noindent \underline{Нач}\\
+\null\qquad вывод("Задача 2")\\
+\null\qquad вывод("Введите размеры матрицы в следующем формате: 'количество строк' 'количество столбцов'")\\
+\null\qquad вывод("Количество столбцов должно быть больше 1")\\
+
+\noindent
+\null\qquad rows, cols: целое положительное число\\
+\null\qquad \underline{цикл-пока} (ввод(rows) не целое) или (ввод(cols) не целое) или !validSize(rows) или !validSize(cols):\\
+\null\qquad \qquad вывод("Неверный формат ввода. Попробуйте снова.")\\
+\null\qquad \underline{кц}\\
+
+\noindent
+\null\qquad вывод("Введите матрицу в следующем формате:")\\
+\null\qquad вывод("matrix[0][0] matrix[0][1] ... matrix[rows][cols]")\\
+
+\noindent
+\null\qquad matrix := [1 : rows \(\cdot\)  cols]\\
+\null\qquad inputArray(rows \(\cdot\) cols, matrix)\\
+
+\noindent
+\null\qquad result := \(\infty\) \\
+\null\qquad \underline{цикл} i := 0 \underline{до} rows - 1:\\
+\null\qquad \null\qquad maximum := \(-\infty\) \\
+\null\qquad \null\qquad \underline{цикл} j := 0 \underline{до} cols - 2:\\
+\null\qquad \null\qquad \null\qquad maximum = max(maximum, \textbf{|}matrix[i \(\cdot\) cols + j] - matrix[i \(\cdot\) cols + j + 1]\textbf{|})\\
+\null\qquad \null\qquad \underline{кц}\\
+\null\qquad \null\qquad result = min(result, maximum)\\
+\null\qquad \underline{кц}\\
+\null\qquad вывод(Результат: result)\\
+\underline{Конец}
+
+\subsection*{Задание 3}
+
+Константа MaxSize = 100\\
+
+
+\noindent \underline{функция} validSize(size: целое число):\\
+\null\qquad \underline{вернуть} size > 0 и size <= MaxSize\\
+\underline{кц}\\
+
+\noindent \underline{процедура} inputArray(size: целое число, array: массив целых чисел):\\
+\null\qquad correctInput: булево\\
+\null\qquad \underline{цикл}:\\
+\null\qquad \qquad correctInput = true\\
+\null\qquad \qquad \underline{цикл} i := 0 \underline{до} size - 1:\\
+\null\qquad \qquad \qquad ввод(array[i])\\
+\null\qquad \qquad \qquad \underline{если} array[i] не является целым числом \underline{то}\\
+\null\qquad \qquad \qquad \qquad correctInput = false\\
+\null\qquad \qquad \qquad \underline{всё}\\
+\null\qquad \qquad \underline{кц}\\
+\null\qquad \qquad \underline{если} !correctInput \underline{то}\\
+\null\qquad \qquad \qquad вывод("Неверный формат ввода. Попробуйте снова.")\\
+\null\qquad \qquad \underline{всё}\\
+\null\qquad \underline{до} correctInput\\
+\null\qquad \underline{кц}\\
+\underline{кц}\\
+
+\noindent \underline{функция} count(length, array)\\
+\null\qquad cnt := [1 : length]\\
+\null\qquad \underline{цикл} i := 0 \underline{до} length - 1:\\
+\null\qquad \null\qquad \underline{цикл} j := 0 \underline{до} length - 1:\\
+\null\qquad \null\qquad \null\qquad \underline{если} array[i] == array[j] \underline{то}\\
+\null\qquad \null\qquad \null\qquad \null\qquad cnt[i] = cnt[i] + 1\\
+\null\qquad \null\qquad \null\qquad \underline{кц}\\
+\null\qquad \null\qquad \underline{кц}\\
+\null\qquad \underline{кц}\\
+\null\qquad \underline{вернуть} cnt\\
+\underline{кц}\\
+
+\noindent\underline{функция} deleteUnique(length, array)\\
+\null\qquad cnt := count(length, array)\\
+\null\qquad lastFreePos := 0\\
+\null\qquad \underline{цикл} i := 0 \underline{до} length - 1:\\
+\null\qquad \null\qquad \underline{если} cnt[i] != 1 \underline{то}\\
+\null\qquad \null\qquad \null\qquad array[lastFreePos] = array[i]\\
+\null\qquad \null\qquad \null\qquad lastFreePos = lastFreePos + 1\\
+\null\qquad \null\qquad \underline{кц}\\
+\null\qquad \underline{кц}\\
+\underline{кц}\\
+
+\noindent \underline{Нач}\\
+\null\qquad вывод("Задача 3")\\
+\null\qquad вывод("Введите размер массива")\\
+
+\noindent
+\null\qquad length: целое положительное число\\
+\null\qquad \underline{цикл-пока} (ввод(length) не целое) или !validSize(length):\\
+\null\qquad \qquad вывод("Неверный формат ввода. Попробуйте снова.")\\
+\null\qquad \underline{кц}\\
+
+\noindent
+\null\qquad вывод("Введите элементы массива (целые числа) в следующем формате:")\\
+\null\qquad вывод("array[0] ... array[sizeofarray]")\\
+
+\noindent
+\null\qquad array := [1 : length]\\
+\null\qquad inputArray(length, array)\\
+\null\qquad deleteUnique(length, array)\\
+
+\noindent
+\null\qquad \underline{если} length != 0 \underline{то}\\
+\null\qquad \null\qquad вывод("Результирующий массив:")\\
+\null\qquad \null\qquad \underline{цикл} i := 0 \underline{до} length - 1:\\
+\null\qquad \null\qquad \null\qquad вывод(array[i])\\
+\null\qquad \underline{иначе}\\
+\null\qquad \null\qquad вывод("Результирующий массив пуст")\\
+\null\qquad \underline{кц}\\
+\underline{Конец}\\

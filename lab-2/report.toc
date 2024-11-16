@@ -1,0 +1,8 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Задание}{2}{section*.2}%
+\contentsline {section}{Постановка задачи}{3}{section*.3}%
+\contentsline {section}{Метод решения}{4}{section*.4}%
+\contentsline {section}{Внешняя спецификация}{5}{section*.5}%
+\contentsline {section}{Описание аглогритма на псевдокоде}{6}{section*.8}%
+\contentsline {section}{Листинг программы}{9}{section*.11}%
+\contentsline {section}{Распечатка тестов к программе и результатов}{12}{section*.14}%
