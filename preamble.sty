@@ -1,5 +1,6 @@
 % Page layout
 \usepackage[left=15mm, top=10mm, right=15mm, bottom=15mm]{geometry}
+\renewcommand*{\arraystretch}{1.5}
 
 % Nice dot
 \usepackage{graphicx}
@@ -40,6 +41,7 @@
 \definecolor{string}{RGB}{0,128,0} % dark green
 \definecolor{comment}{RGB}{255,0,0}  % red
 \definecolor{keyword}{RGB}{0,0,255} % blue
+\lstset{inputencoding=utf8x, extendedchars=\true}
 
 \lstdefinestyle{c}{
 	commentstyle=\color{comment},

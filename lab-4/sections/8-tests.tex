@@ -1,81 +1,35 @@
-\begin{minipage}[t]{0.5\textwidth}
-
-\subsection*{\centering Задание 1}
+\begin{table}[h]
+\centering
 \begin{tabular}{|l|l|l|}
     \hline
     Номер & Исходные данные & Результат\\[2ex]
     \hline
-    1 & n = 3, m = 3, k = 3 & 1 2 0 \\
-      & Z =                 & 4 5 0 \\
-      & 1 2 3               & 7 8 0 \\
-      & 4 5 6               & \\
-      & 7 8 9               & \\
-      & X =                 & \\
-      & 10 11 12            & \\
+    1 & 4                    & Substrings: \\
+      & -момо-мо             & -момо- \\
+      & +kiki+wou            & +kiki+ \\
+      & *jiji                & Resulting string: \\
+      & ahahaha              & -ммооммоо-ммоо \\
     \hline
-    2 & n = 3, m = 3, k = 3 & 1 2 3 \\
-      & Z =                 & 4 5 6 \\
-      & 1 2 3               & 7 8 9 \\
-      & 4 5 6               & \\
-      & 7 8 9               & \\
-      & X =                 & \\
-      & 3 6 9               & \\
+    2 & 4                    & Substrings: \\
+      & -kiki-               & -kiki- \\
+      & /анна/               & /анна/ \\
+      & *ахах*               & *ахах* \\
+      & jamaika              & No cyrillic characters in shortest substring. \\
     \hline
-    3 & n = 3, m = 3, k = 3 & 0 2 0 \\
-      & Z =                 & 0 5 0 \\
-      & -3 2 3              & 0 8 0 \\
-      & -6 5 6              & \\
-      & -9 8 9              & \\
-      & X =                 & \\
-      & 10 11 12            & \\
+    3 & 4                    & Substrings: \\
+      & -kiki-               & -kiki- \\
+      & /анна/               & /анна/ \\
+      & *ахах*               & *ахах* \\
+      & \textbf{- - -}         & \textbf{- -} \\
+      &                      & \textbf{- - -} \\
+      &                      & \textbf{- -} \\
+      &                      & No cyrillic characters in shortest substring. \\
     \hline
-    4 & n = 3, m = 3, k = 3 & 0 0 0 \\
-      & Z =                 & 0 0 0 \\
-      & -3 3 3              & 0 0 0 \\
-      & -6 6 6              & \\
-      & -9 9 9              & \\
-      & X =                 & \\
-      & 10 11 12            & \\
-    \hline
-    5 & n = 3, m = 3, k = 2 & -3 0 0 \\
-      & Z =                 & 0  0 0 \\
-      & -3 3 3              & 0  9 9 \\
-      & -6 6 6              & \\
-      & -9 9 9              & \\
-      & X =                 & \\
-      & -3 9                & \\
+    4 & 4                    & Substrings: \\
+      & opa                  & No relevant substrings found. \\
+      & a                    & \\
+      & podstrok-to          & \\
+      & net                  & \\
     \hline
 \end{tabular}
-
-\end{minipage}%
-\hfil
-\begin{minipage}[t]{0.5\textwidth}
-
-\subsection*{\centering Задание 2}
-\begin{tabular}{|l|l|l|}
-    \hline
-    Номер & Исходные данные & Результат\\[2ex]
-      \hline
-      1 & k = 5     & 0 0 0 0 0 \\
-        & X =       & \\
-        & 0 0 0 0 0 & \\
-      \hline
-      2 & k = 5     & 1 2 3 4 5 \\
-        & X =       & \\
-        & 1 2 3 4 5 & \\
-      \hline
-      3 & k = 5          & 1 2 3 4 5 \\
-        & X =            & \\
-        & -1 -2 -3 -4 -5 & \\
-      \hline
-      4 & k = 5             & 15 13 8 10 10 \\
-        & X =               & \\
-        & 50 49 17 343 1234 & \\
-      \hline
-      5 & k = 5                  & 7 12 36 0 7 \\
-        & X =                    & \\
-        & -1024 -66 -9999 -0 -70 & \\
-      \hline
-\end{tabular}
-
-\end{minipage}
+\end{table}
