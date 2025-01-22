@@ -1,0 +1,6 @@
+Input:
+5 5 5 5 5 5 
+Result of task 2:
+5 5 5 5 5 5 
+Result of task 3:
+5 5 

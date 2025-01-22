@@ -18,20 +18,17 @@ struct Car {
         unsigned year, month;
     } releaseDate;
 
-    struct {
-        unsigned char r, g, b;
-    } color;
-
+    char* color;
     unsigned engineCapacity;
 };
 
 void debug(struct Car* c) {
     printf("Company: %s\n", c->company);
-    printf("Model:\n    Series: %s\n    Number: %d\n", c->model.series, c->model.number);
-    printf("Price: %d\n", c->price);
-    printf("Release Date:\n    Year: %d\n    Month: %d\n", c->releaseDate.year, c->releaseDate.month);
-    printf("Color: (%hhu, %hhu, %hhu)\n", c->color.r, c->color.g, c->color.b);
-    printf("Engine capacity: %d\n", c->engineCapacity);
+    printf("Model:\n    Series: %s\n    Number: %u\n", c->model.series, c->model.number);
+    printf("Price: %u\n", c->price);
+    printf("Release Date:\n    Year: %u\n    Month: %u\n", c->releaseDate.year, c->releaseDate.month);
+    printf("Color: %s\n", c->color);
+    printf("Engine capacity: %u\n", c->engineCapacity);
 }
 
 void inputString(char** string, char stopchar) {
@@ -73,13 +70,11 @@ bool readCarInfo(struct Car* c) {
     if (!inputUint(&c->releaseDate.year) || !inputUint(&c->releaseDate.month)) {
         return false;
     }
-    if (!inputUchar(&c->color.r) || !inputUchar(&c->color.g) || !inputUchar(&c->color.b)) {
-        return false;
-    }
+    inputString(&c->color, ';');
     if (!inputUint(&c->engineCapacity)) {
         return false;
     }
-    return c->releaseDate.year <= 2025 && c->releaseDate.month <= 12;
+    return c->releaseDate.year <= 2025 && c->releaseDate.month <= 12 && c->releaseDate.month > 0;
 }
 
 int main(void) {
@@ -103,21 +98,22 @@ int main(void) {
         return 3;
     }
 
-    for (int i = 0; i < n; i++) {
-        if (!readCarInfo(&cars[i])) {
+    for (struct Car* c = cars; c < cars + n; c++) {
+        if (!readCarInfo(c)) {
             puts("Incorrect input");
             return 4;
         }
+        debug(c);
     }
 
     unsigned maxPrice = 0;
-    for (int i = 0; i < n; i++) {
-        maxPrice = (maxPrice >= cars[i].price ? maxPrice : cars[i].price);
+    for (struct Car* c = cars; c < cars + n; c++) {
+        maxPrice = (maxPrice >= c->price ? maxPrice : c->price);
     }
 
-    for (int i = 0; i < n; i++) {
-        if (cars[i].price == maxPrice) {
-            printf("(%hhu, %hhu, %hhu)\n", cars[i].color.r, cars[i].color.g, cars[i].color.b);
+    for (struct Car* c = cars; c < cars + n; c++) {
+        if (c->price == maxPrice) {
+            printf("%s\n", c->color);
         }
     }
 
