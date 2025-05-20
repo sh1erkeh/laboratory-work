@@ -1,0 +1,54 @@
+\subsection*{\centering Задание 1}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Номер & Исходные данные & Результат\\[2ex] \hline
+        1     & 1               & Executing Task1...\\
+              & aaaa            & No viable substrings\\[2ex]\hline
+        2     & 2               & \\
+              & ABCD            & Executing Task1...\\
+              & EFGH            & Results:\\
+              &&B\\
+              &&BC\\
+              &&C\\
+              &&F\\
+              &&FG\\
+              &&G\\
+              &&Executing Task2...\\
+              &&Results:\\
+              &&B\\
+              &&Executing Task3...\\
+              &&No digits found\\[2ex]\hline
+        3     & 1               & \\
+              & ABCD1234        & Executing Task1...\\
+              && Results:\\
+              &&B\\
+              &&BC\\
+              &&C\\
+              &&Executing Task2...\\
+              &&Results:\\
+              &&B\\
+              &&Executing Task3...\\
+              &&ABCD1***234\\[2ex]\hline
+    \end{tabular}
+\end{table}
+\pagebreak
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Номер & Исходные данные & Результат\\[2ex] \hline
+        4     & 1               & \\
+              & ABcD1234        & Executing Task1...\\
+              && Results:\\
+              &&Bc\\
+              &&c\\
+              &&Executing Task2...\\
+              &&Results:\\
+              &&c\\
+              &&Executing Task3...\\
+              &&ABcD1***234\\[2ex]\hline
+    \end{tabular}
+\end{table}

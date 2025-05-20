@@ -1,0 +1,4 @@
+3
+John Doe Ivanovich A-101 3 3 3 3
+Jane Smith Petrovna B-202 4 4 4 4
+Bob Brown Aleksandrovich C-303 2 3 2 3
